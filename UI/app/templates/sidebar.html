@@ -1,0 +1,18 @@
+<div class="bg-secondary col-5 col-md-3 pt-3" style="min-height: 83.75vh;">
+  <div class="row justify-content-center">
+    <nav class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-white" aria-current="page" href="{{ url_for('main.main_index') }}"><h5>HOMEPAGE</h5></a>
+          </li>
+          {% if current_user.is_authenticated %}
+          {% for table in tables %}
+            <li class="nav-item mx-auto">
+              <a class="nav-link text-white" aria-current="page" href="{{ url_for('user.'+table) }}"><h5>{{table|capitalize|replace('_',' ')}}</h5></a>
+            </li>
+          {% endfor %}
+          {% endif %}
+          </ul>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/BDD/SQL/0-Create_MasterTable.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/BDD/SQL/1-Create_MasterData.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/BDD/SQL/2-Create_User.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/BDD/SQL/3-Create_Fragments.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/BDD/SQL/4-Drop_MasterTable.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/BDD/SQL/5-Create_Views.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/BDD/SQL/6-Create_MaterializedViews.sql" dialect="Oracle" />
+  </component>
+</project>

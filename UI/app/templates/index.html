@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+
+{% block title %} {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+{% include "sidebar.html" %}
+<div class="pt-3 px-4 col-7 col-md-9 table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            {% for t in titles %}
+            <th>{{t}}</th>
+            {% endfor %}
+            {% if titles|length > 0 %}<th></th> {% endif %}
+        </tr>
+    </thead>
+        {% for o in listObj %}
+        <tr>
+            <form id="{{o[0]}}" name="{{o[0]}}" method="post">
+                {% for i in range(o|length) %}
+                <td><input class="form-control form-control-sm" type="text" name="{{titles[i]}}" value="{{o[i]}}" ></td>
+                {% endfor %}
+                <td><input class="form-control form-control-sm" type="submit" value="Modifier"></td>
+            </form>
+        </tr>
+        {% endfor %}
+        {% if titles|length > 0  %}
+        <tr>
+            <form id="-1" method="post">
+                {% for i in range(titles|length) %}
+                <td><input class="form-control form-control-sm" type="text"  name="{{titles[i]}}" {% if i == 0 %} disabled {% else %}required{% endif %} ></td>
+                {% endfor %}
+                <td><input class="form-control form-control-sm" type="submit" value="Ajouter"></td>
+            </form>
+        </tr>
+        {% endif %}
+      </table>
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}{% endblock javascripts %}    

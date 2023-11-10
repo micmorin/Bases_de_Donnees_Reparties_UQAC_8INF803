@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    {% block stylesheets %}{% endblock stylesheets %}
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">    
+
+</head>
+<body>
+    <div class="row">
+    <header class="bg-dark col-12">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark text-center text-white row">
+            <div class="col-3"></div>
+            <div class="col-6"><h3 class="mx-auto"> Projet 1 - Bases de Données Réparties - 8INF803 </h3></div>
+                <div class="col-3" >
+                {% if current_user.is_authenticated %}<a class="text-center badge bg-primary text-white" href="{{ url_for('main.main_logout') }}">Logout</a>{% endif %}
+            </div>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %}
+        <div class="alert alert-primary col-12" role="alert" id="messages">
+            <button type="button" class="btn-close" 
+                    aria-label="Close" 
+                    onclick="document.getElementById('messages').style.display = 'none';">X</button>
+            {{ messages[0] }}
+        </div>
+        {% endif %} 
+    {% endwith %}
+            {% block content %}{% endblock content %} 
+        <footer class="footer text-center col-12 bg-dark text-white">
+            &copy;  Mattys Gervais, Mathieu Dejeante, Michael Morin - 2023
+        </footer>
+
+        </div>
+    </div>
+    {% block javascripts %}{% endblock javascripts %}
+
+</body>
+</html>

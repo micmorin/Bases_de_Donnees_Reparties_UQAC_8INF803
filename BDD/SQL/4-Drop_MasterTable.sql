@@ -1,0 +1,25 @@
+CONNECT SYSTEM/fakepassword
+
+-- AlphaSort QUADIARY TABLES: -------------------------------------------------------------------------------------------
+
+DROP TABLE CALENDRIER CASCADE CONSTRAINTS;
+
+-- AlphaSort TERTIARY TABLES: ------------------------------------------------------
+
+DROP TABLE ARBITRE CASCADE CONSTRAINTS;
+DROP TABLE EQUIPE CASCADE CONSTRAINTS;
+DROP TABLE MATCH CASCADE CONSTRAINTS;
+
+-- AlphaSort SECONDARY TABLES: -------------------------------------------------------------------------------------------
+
+DROP TABLE CLUBSPORTIF CASCADE CONSTRAINTS;
+DROP TABLE PALMARES CASCADE CONSTRAINTS;
+DROP TABLE PERSONNEL CASCADE CONSTRAINTS;
+DROP TABLE STADE CASCADE CONSTRAINTS;
+DROP TABLE STAFFTECHNIQUE CASCADE CONSTRAINTS;
+
+-- AlphaSort PRIMARY TABLES: -------------------------------------------------------------------------------------------
+
+DROP TABLE BUREAU CASCADE CONSTRAINTS;
+DROP TABLE DIRIGEANT CASCADE CONSTRAINTS;
+DROP TABLE JOUEUR CASCADE CONSTRAINTS;

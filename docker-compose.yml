@@ -1,0 +1,21 @@
+#docker compose -f docker-compose.yml build
+#docker compose -f docker-compose.yml up
+version: '0.4'
+services:
+  app:
+    container_name: reparti_flask_app
+    build: ./UI
+    volumes:
+      - ./UI/app:/app
+    ports:
+      - 80:5000
+
+  bd:
+    container_name: reparti_bdd
+    image: gvenzl/oracle-xe:18-slim-faststart
+    environment:
+        ORACLE_PASSWORD: fakepassword
+    ports:
+        - 3223:1521
+    volumes:
+      - ./BDD/SQL:/container-entrypoint-startdb.d
